@@ -6,6 +6,7 @@
   --theme-color: #2d767f;
   --text-muted: #c7c9c9;
   --text-transparent: rgba(0, 0, 0, 0.3);
+  --bg-transparent: rgba(0, 0, 0, 0.7);
 }
 body {
   padding: 0px;
@@ -162,7 +163,7 @@ body {
   border-radius: 4px;
 }
 .header-part {
-  background-color: #2d767f;
+  background-color: var(--theme-color);
   display: flex;
   margin-top: -100px;
   z-index: 2;
@@ -263,11 +264,29 @@ body {
 }
 .photo-card-list {
   margin-top: 100px;
+  margin-bottom: 200px;
   display: flex;
   justify-content: space-between;
 }
 .photo-card {
   width: 16%;
+  transition: 0.5s;
+}
+.photo-card:hover {
+  transform: scale(1.07);
+}
+.photo-card:hover .photo-card-image {
+  filter: contrast(1.2);
+}
+.photo-card:hover .photo-card-footer {
+  background-color: var(--text-dark);
+}
+.photo-card:hover p {
+  color: var(--text-white);
+  font-size: 17px;
+}
+.photo-card:hover i {
+  color: var(--text-white);
 }
 .photo-card-image {
   width: 100%;
@@ -276,13 +295,13 @@ body {
 }
 .photo-card-footer {
   background-color: var(--text-muted);
-  margin-top: -5px;
+  margin-top: -6px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 .photo-card-text {
-  padding: 15px 5px;
+  padding: 15px 8px;
 }
 .photo-card-text p {
   margin-top: 0px;
@@ -296,4 +315,261 @@ body {
 .photo-card-footer i {
   margin-right: 20px;
   color: var(--semi-dark);
+}
+/*-------------------------- Section three ----------------------*/
+.section-three {
+  background-image: url(../images/body-feature.jpg);
+  background-size: 100%;
+  height: 350px;
+  position: relative;
+  z-index: 0;
+  filter: blur(0.8px);
+}
+.section-three::after {
+  content: "";
+  width: 100%;
+  height: 350px;
+  background-color: var(--bg-transparent);
+  opacity: 0.8;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+.d-flex {
+  display: flex;
+  justify-content: center;
+}
+.service-header {
+  position: absolute;
+  z-index: 2;
+  width: 800px;
+  margin: 20px auto;
+  text-align: center;
+}
+.service-header h5 {
+  color: var(--text-white);
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+.service-header p {
+  margin-top: 10px;
+  color: var(--text-white);
+  font-size: 17px;
+  letter-spacing: 0.8px;
+}
+.service-icon-list {
+  position: absolute;
+  width: 1200px;
+  margin: 160px 0px 0px 380px;
+  z-index: 3;
+}
+.service-icon-feature {
+  display: flex;
+  justify-content: center;
+}
+.service-icon {
+  margin-right: 30px;
+}
+.service-icon .outer {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--text-white);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.service-icon .outer i {
+  color: var(--text-white);
+  font-size: 25px;
+}
+.service-icon p {
+  color: var(--text-white);
+  margin-top: 8px;
+  font-size: 14px;
+}
+/*------------------------------ Fourth-section -----------------------------*/
+.fourth-section {
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+.fourth-section-header {
+  margin-bottom: 40px;
+}
+.fourth-section-header h5 {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.fourth-section-header p {
+  text-align: center;
+  font-size: 17px;
+  margin-top: 0px;
+}
+.fourth-section .card-list {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.fourth-section .card {
+  width: 23%;
+  border: 1px solid var(--text-muted);
+  padding: 10px;
+  box-shadow: 1px 2px 5px var(--text-muted);
+  position: relative;
+  background-color: var(--text-muted);
+}
+.fourth-section .card:hover {
+  border-top: 2px solid var(--text-success);
+}
+.fourth-section .card::before {
+  content: "";
+  position: absolute;
+  border: 16px solid white;
+  border-top-color: var(--text-muted);
+  display: inline-block;
+  top: 158px;
+  left: 380px;
+  z-index: -1;
+}
+.fourth-section .card .card-para {
+  font-size: 17px;
+  line-height: 1.3;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+  color: var(--semi-dark);
+}
+.fourth-section .card .card-title {
+  font-size: 20px;
+  color: var(--text-success);
+  margin: 0px 0px;
+}
+.fourth-section .card .card-text {
+  font-size: 17px;
+  margin: 5px 0px 0px;
+  color: var(--semi-dark);
+}
+/*--------------------------------- Footer Section -------------------------------*/
+.footer-section {
+  margin-top: 150px;
+  background-color: var(--theme-color);
+  /* height: 400px; */
+}
+.first-footer {
+  width: 90%;
+  margin: 0px auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
+.first-footer .footer-part-one {
+  margin-top: 30px;
+  width: 22%;
+}
+.footer-part-one h5 {
+  margin-bottom: 10px;
+  color: var(--text-success);
+  font-size: 20px;
+}
+.footer-part-one p {
+  margin-top: 0px;
+  color: var(--text-white);
+  font-size: 17px;
+  text-align: justify;
+  line-height: 1.5;
+}
+.footer-part-one input {
+  padding: 10px 20px;
+  border: none;
+  margin-right: 10px;
+}
+.footer-part-one button {
+  padding: 10px 20px;
+  background-color: var(--text-success);
+  color: var(--text-white);
+  border: none;
+}
+.first-footer .footer-part-two {
+  margin-top: 30px;
+  width: 22%;
+  margin-left: 20px;
+}
+.footer-part-two h5 {
+  margin-bottom: 10px;
+  color: var(--text-success);
+  font-size: 20px;
+}
+.d-flex-one {
+  display: flex;
+}
+.footer-part-two img {
+  width: 40px;
+  height: 40px;
+  border: 2px solid white;
+  border-radius: 9px;
+  margin-right: 10px;
+}
+.footer-part-two .paragraph p {
+  font-size: 17px;
+  margin-top: 0px;
+  color: var(--text-white);
+  line-height: 1.5;
+  margin-bottom: 0px;
+}
+.footer-part-two .paragraph p:last-child {
+  margin-top: 5px;
+  color: var(--text-success);
+}
+.second-d-flex {
+  display: flex;
+  margin-top: 30px;
+}
+.first-footer .footer-part-three {
+  margin-top: 30px;
+  width: 22%;
+  margin-left: 20px;
+}
+.footer-part-three h5 {
+  margin-bottom: 10px;
+  color: var(--text-success);
+  font-size: 20px;
+}
+.footer-part-three .one {
+  margin-bottom: 10px;
+}
+.footer-part-three .two {
+  margin-bottom: 10px;
+}
+.footer-part-three .three {
+  margin-bottom: 10px;
+}
+.footer-part-three button {
+  background-color: var(--text-transparent);
+  border: 1px solid var(--text-white);
+  color: var(--text-white);
+  padding: 5px 10px;
+}
+.first-footer .footer-part-four {
+  margin-top: 30px;
+  width: 22%;
+  margin-left: 20px;
+}
+.footer-part-four h5 {
+  margin-bottom: 10px;
+  color: var(--text-success);
+  font-size: 20px;
+}
+.footer-part-four p {
+  color: var(--text-white);
+  font-size: 17px;
+  margin: 10px 0px;
+}
+.footer-part-four span {
+  color: var(--text-success);
+}
+.footer-part-four i {
+  color: var(--text-white);
+  margin-top: 15px;
+  margin-right: 10px;
 }
